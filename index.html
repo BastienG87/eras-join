@@ -135,7 +135,13 @@
     background:transparent;
     color:var(--text);
     font-size:1rem;
-    margin-bottom:20px;
+    margin-bottom:8px;
+  }
+  .field-hint{
+    color:var(--muted);
+    font-size:0.8rem;
+    line-height:1.4;
+    margin:0 0 20px;
   }
   input[type="email"]:focus{
     outline:2px solid var(--accent);
@@ -212,6 +218,7 @@
 
       <label class="field-label" for="email">Email address</label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" inputmode="email">
+      <p class="field-hint">You'll get a confirmation email from <strong>Amazon Web Services</strong> &mdash; it's genuine, please check your spam folder if you don't see it.</p>
 
       <button type="submit" id="submit-btn">Get started</button>
 
@@ -227,7 +234,7 @@
 </div>
 
 <script>
-  const SIGNUP_ENDPOINT = "https://kuqdfvh7i6.execute-api.ap-southeast-1.amazonaws.com/signup";
+  const SIGNUP_ENDPOINT = "https://3wdmm9zco1.execute-api.ap-southeast-1.amazonaws.com/signup";
 
   const form = document.getElementById("signup-form");
   const msg = document.getElementById("msg");
