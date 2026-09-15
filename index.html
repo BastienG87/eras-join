@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join ERAS</title>
+<style>
+  :root{
+    --bg:#f7f7f5;
+    --card:#ffffff;
+    --text:#111111;
+    --muted:#6b6b6b;
+    --accent:#111111;
+    --accent-text:#ffffff;
+    --border:#e4e4e2;
+    --error:#c1352d;
+    --success:#1f7a3f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d0d0d;
+      --card:#1a1a1a;
+      --text:#f2f2f2;
+      --muted:#9a9a9a;
+      --accent:#f2f2f2;
+      --accent-text:#0d0d0d;
+      --border:#2b2b2b;
+      --error:#ff6b60;
+      --success:#4fd17a;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:24px 16px 48px;
+    display:flex;
+    justify-content:center;
+  }
+  .wrap{
+    width:100%;
+    max-width:420px;
+  }
+  .logo{
+    display:flex;
+    justify-content:center;
+    margin:8px 0 28px;
+  }
+  .logo img{
+    height:40px;
+    width:auto;
+    display:block;
+  }
+  .logo img.logo-dark{display:block;}
+  .logo img.logo-light{display:none;}
+  @media (prefers-color-scheme: dark){
+    .logo img.logo-dark{display:none;}
+    .logo img.logo-light{display:block;}
+  }
+  h1{
+    font-size:1.5rem;
+    margin:0 0 8px;
+    text-align:center;
+  }
+  p.sub{
+    color:var(--muted);
+    text-align:center;
+    margin:0 0 28px;
+    font-size:0.95rem;
+    line-height:1.4;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:24px;
+  }
+  fieldset{
+    border:none;
+    padding:0;
+    margin:0 0 20px;
+  }
+  legend{
+    font-size:0.9rem;
+    font-weight:600;
+    margin-bottom:10px;
+    padding:0;
+  }
+  .platform-options{
+    display:flex;
+    gap:10px;
+  }
+  .platform-option{
+    flex:1;
+    position:relative;
+  }
+  .platform-option input{
+    position:absolute;
+    opacity:0;
+    inset:0;
+    width:100%;
+    height:100%;
+    margin:0;
+    cursor:pointer;
+  }
+  .platform-option label{
+    display:block;
+    text-align:center;
+    padding:14px 8px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    font-size:0.95rem;
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  .platform-option input:checked + label{
+    border-color:var(--accent);
+    background:var(--accent);
+    color:var(--accent-text);
+    font-weight:600;
+  }
+  label.field-label{
+    display:block;
+    font-size:0.9rem;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  input[type="email"]{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--text);
+    font-size:1rem;
+    margin-bottom:20px;
+  }
+  input[type="email"]:focus{
+    outline:2px solid var(--accent);
+    outline-offset:1px;
+  }
+  button[type="submit"]{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:var(--accent);
+    color:var(--accent-text);
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+  button[type="submit"]:disabled{
+    opacity:0.6;
+    cursor:default;
+  }
+  .msg{
+    margin-top:16px;
+    font-size:0.9rem;
+    line-height:1.4;
+    display:none;
+  }
+  .msg.show{display:block;}
+  .msg.success{color:var(--success);}
+  .msg.error{color:var(--error);}
+  .social{
+    margin-top:28px;
+    text-align:center;
+  }
+  .social p{
+    color:var(--muted);
+    font-size:0.85rem;
+    margin:0 0 10px;
+  }
+  .social a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:0.9rem;
+    font-weight:600;
+    margin:0 8px;
+  }
+  .social a:hover{text-decoration:underline;}
+  [hidden]{display:none!important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">
+    <img class="logo-dark" src="assets/logo-black.png" alt="ERAS" onerror="this.style.display='none'">
+    <img class="logo-light" src="assets/logo-white.png" alt="ERAS" onerror="this.style.display='none'">
+  </div>
+  <h1>Get the ERAS app</h1>
+  <p class="sub">Tell us your device and email,<br>we'll get you set up right away.</p>
+
+  <div class="card">
+    <form id="signup-form">
+      <fieldset>
+        <legend>Your device</legend>
+        <div class="platform-options">
+          <div class="platform-option">
+            <input type="radio" id="platform-ios" name="platform" value="ios" checked>
+            <label for="platform-ios">iOS</label>
+          </div>
+          <div class="platform-option">
+            <input type="radio" id="platform-android" name="platform" value="android">
+            <label for="platform-android">Android</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <label class="field-label" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" inputmode="email">
+
+      <button type="submit" id="submit-btn">Get started</button>
+
+      <div class="msg" id="msg"></div>
+    </form>
+  </div>
+
+  <div class="social">
+    <p>Follow along</p>
+    <a href="https://instagram.com/basgerber" target="_blank" rel="noopener">@basgerber</a>
+    <a href="https://instagram.com/erastechnologies" target="_blank" rel="noopener">@erastechnologies</a>
+  </div>
+</div>
+
+<script>
+  const SIGNUP_ENDPOINT = "https://kuqdfvh7i6.execute-api.ap-southeast-1.amazonaws.com/signup";
+
+  const form = document.getElementById("signup-form");
+  const msg = document.getElementById("msg");
+  const submitBtn = document.getElementById("submit-btn");
+
+  function showMessage(text, type){
+    msg.textContent = text;
+    msg.className = "msg show " + type;
+  }
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const platform = form.querySelector('input[name="platform"]:checked').value;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    msg.className = "msg";
+
+    try{
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, platform })
+      });
+
+      if(!res.ok){
+        throw new Error("Request failed");
+      }
+
+      if(platform === "ios"){
+        showMessage("You're in! Check your email in the next few minutes for an invite from Apple to install ERAS via TestFlight.", "success");
+      } else {
+        showMessage("Thanks! The Android app isn't out yet, but we've got your email and will let you know the moment it's ready.", "success");
+      }
+      form.reset();
+      document.getElementById("platform-ios").checked = true;
+    } catch(err){
+      showMessage("Something went wrong on our end. Please try again, or DM us on Instagram and we'll sort you out.", "error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Get started";
+    }
+  });
+</script>
+</body>
+</html>
