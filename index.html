@@ -259,9 +259,9 @@
       }
 
       if(platform === "ios"){
-        showMessage("You're in! Check your email in the next few minutes for an invite from Apple to install ERAS via TestFlight.", "success");
+        showMessage("Thanks! You'll get two emails shortly: one from Amazon Web Services to confirm your address, and one from Apple TestFlight with your invite to install the app. Check your spam folder if you don't see them.", "success");
       } else {
-        showMessage("Thanks! The Android app isn't out yet, but we've got your email and will let you know the moment it's ready.", "success");
+        showMessage("Thanks! You'll get an email from Amazon Web Services to confirm your address. The Android app isn't ready yet — we'll email you the moment it's live.", "success");
       }
       form.reset();
       document.getElementById("platform-ios").checked = true;
